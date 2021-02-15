@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact name="FlexPos:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FlexPos_jar</output-path>
+    <root id="root">
+      <element id="archive" name="FlexPos.jar">
+        <element id="module-output" name="FlexPos" />
+      </element>
+      <element id="library" level="project" name="org.kordamp.ikonli:ikonli-antdesignicons-pack:12.2.0" />
+      <element id="library" level="project" name="com.jfoenix:jfoenix:9.0.10" />
+      <element id="library" level="project" name="org.kordamp.ikonli:ikonli-javafx:12.2.0" />
+      <element id="library" level="project" name="org.kordamp.ikonli:ikonli-boxicons-pack:12.2.0" />
+      <element id="library" level="application" name="ikonli-antdesignicons-pack-12.2.0" />
+      <element id="library" level="project" name="org.kordamp.ikonli:ikonli-bootstrapicons-pack:12.2.0" />
+    </root>
+  </artifact>
+</component>

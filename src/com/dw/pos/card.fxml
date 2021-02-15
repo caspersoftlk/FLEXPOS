@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.text.Font?>
+
+
+<JFXButton fx:id="btn_card" alignment="CENTER" buttonType="RAISED" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="150.0" style="-fx-background-color: #217EB6#217EB6;" textAlignment="CENTER" textFill="WHITE" wrapText="true" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <font>
+      <Font size="18.0" />
+   </font>
+</JFXButton>

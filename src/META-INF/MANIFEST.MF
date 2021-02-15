@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Main-Class: com.dw.Main
+Class-Path: ikonli-antdesignicons-pack-12.2.0.jar ikonli-core-12.2.0.jar
+  jfoenix-9.0.10.jar ikonli-javafx-12.2.0.jar ikonli-core-12.2.0.jar iko
+ nli-boxicons-pack-12.2.0.jar ikonli-core-12.2.0.jar ikonli-antdesignico
+ ns-pack-12.2.0.jar ikonli-bootstrapicons-pack-12.2.0.jar ikonli-boxicon
+ s-pack-12.2.0.jar ikonli-core-12.2.0.jar ikonli-javafx-12.2.0.jar jfoen
+ ix-9.0.10.jar ikonli-bootstrapicons-pack-12.2.0.jar ikonli-core-12.2.0.
+ jar
+

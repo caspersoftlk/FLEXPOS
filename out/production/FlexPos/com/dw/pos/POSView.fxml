@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onSwipeLeft="#showSidebar" onSwipeRight="#showSidebar" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dw.pos.POSView">
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF;" BorderPane.alignment="CENTER">
+         <children>
+            <Separator layoutX="761.0" layoutY="8.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.0" />
+            <VBox fx:id="vBox_MainContainer" layoutX="267.0" layoutY="177.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="8.0">
+               <children>
+                  <HBox prefWidth="200.0">
+                     <children>
+                        <FontIcon iconColor="#727272" iconLiteral="bx-user-circle" iconSize="26" />
+                        <TextField maxWidth="1.7976931348623157E308" promptText="Select Member" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <FontIcon iconColor="#727272" iconLiteral="bx-bolt-circle" iconSize="26" />
+                        <TextField>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <FontIcon iconColor="#727272" iconLiteral="bx-time" iconSize="26" />
+                        <TextField fx:id="tf_time" promptText="Time" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="8.0" top="2.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <AnchorPane fx:id="ancPane_Container" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <GridPane alignment="CENTER" hgap="5.0" vgap="5.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="5.0" percentWidth="1.0" prefWidth="5.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="70.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="60.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField alignment="CENTER_RIGHT" editable="false" focusTraversable="false" text="18,898.00" GridPane.columnIndex="4" GridPane.columnSpan="2" />
+                        <TextField alignment="CENTER_RIGHT" promptText="0.00" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+                        <TextField alignment="CENTER_RIGHT" promptText="0.00" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                        <TextField alignment="CENTER_RIGHT" promptText="0.00" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                        <TextField alignment="CENTER_RIGHT" promptText="0.00" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="4.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField alignment="CENTER_RIGHT" editable="false" focusTraversable="false" promptText="0.00" text="18,898.00" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <TextField alignment="CENTER_RIGHT" promptText="0.00" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets right="4.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label text="GROSS AMOUNT" GridPane.columnIndex="3" />
+                        <Label text="Total Promo Discount" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                        <Label text="Valid for Discount" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                        <Label text="Discount %" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                        <Label text="NET AMOUNT" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#showGridChash" style="-fx-background-color: #19C636#19C636 #19C636#19C636;" text="CASH" textFill="WHITE" GridPane.rowSpan="2">
+                           <graphic>
+                              <FontIcon iconColor="WHITE" iconLiteral="bx-money" iconSize="24">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </FontIcon>
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #333333 #333333 #333333 #333333;" text="DIS COUP" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowSpan="2">
+                           <graphic>
+                              <FontIcon iconColor="WHITE" iconLiteral="bxs-coupon" iconSize="24" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#showGridCard" style="-fx-background-color: #FBA23F#FBA23F #FBA23F#FBA23F;" text="CARD" textFill="WHITE" GridPane.rowIndex="2" GridPane.rowSpan="2">
+                           <graphic>
+                              <FontIcon iconColor="WHITE" iconLiteral="bxs-credit-card" iconSize="24" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #333333 #333333 #333333 #333333;" text="F C Y" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="2">
+                           <graphic>
+                              <FontIcon iconColor="WHITE" iconLiteral="bx-dollar" iconSize="24" />
+                           </graphic>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #FB5844#FB5844;" text="CEDIT" textFill="WHITE" GridPane.rowIndex="4">
+                           <graphic>
+                              <FontIcon iconColor="WHITE" iconLiteral="bx-dna" iconSize="20" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #333333 #333333 #333333 #333333;" text="GIFT VOUCH" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.rowSpan="2">
+                           <graphic>
+                              <FontIcon iconColor="WHITE" iconLiteral="bx-gift" iconSize="24" />
+                           </graphic>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #333333 #333333 #333333 #333333;" text="CHEQUE" textFill="WHITE" GridPane.rowIndex="5">
+                           <graphic>
+                              <FontIcon iconColor="WHITE" iconLiteral="bxs-bank" iconSize="20" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+    </center>
+    <right>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <GridPane hgap="8.0" prefHeight="154.0" prefWidth="241.0" vgap="8.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                      <TextField fx:id="tf_barcode" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="81.0" prefWidth="200.0" promptText="Find Item" GridPane.columnSpan="2">
+                     <padding>
+                        <Insets left="8.0" right="40.0" />
+                     </padding>
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
+                      <TextField fx:id="tf_qty" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="114.0" promptText="Qty :" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="tf_qty1" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="114.0" promptText="Dis %" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="tf_qty11" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="38.0" prefWidth="109.0" promptText="Dis Val" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextField>
+                  <FontIcon fill="#4a4a4a" iconLiteral="bi-search" iconSize="26" wrappingWidth="33.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="UOM" textFill="#4d4d4d" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="10.0" />
+               </VBox.margin>
+            </GridPane>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="4.0" />
+               </VBox.margin>
+            </Separator>
+            <GridPane hgap="8.0" prefWidth="280.0" vgap="8.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXButton buttonType="RAISED" focusTraversable="false" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #4CA4DC#4CA4DC;" text="Hold Bill" textFill="WHITE" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontIcon fill="WHITE" iconLiteral="bi-pause-circle">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </FontIcon>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" focusTraversable="false" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #FBA23F#FBA23F;" text="Cash Drawer" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontIcon fill="WHITE" iconLiteral="bi-cash-stack">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </FontIcon>
+                     </graphic>
+                  </JFXButton>
+                  <Label maxWidth="1.7976931348623157E308" text="previous bill Amount :" textFill="#b23232">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="23,234.00" textFill="#b23232" GridPane.columnIndex="1" GridPane.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" />
+               </VBox.margin>
+            </GridPane>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets bottom="4.0" left="8.0" right="8.0" top="10.0" />
+               </VBox.margin>
+            </Separator>
+                <GridPane hgap="8.0" maxHeight="1.7976931348623157E308" prefHeight="383.0" prefWidth="286.0" vgap="8.0" VBox.vgrow="ALWAYS">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <JFXButton buttonType="RAISED" contentDisplay="TEXT_ONLY" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #333333 #333333;" text="." textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TEXT_ONLY" focusTraversable="false" layoutX="174.0" layoutY="274.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #333333 #333333;" text="7" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TEXT_ONLY" focusTraversable="false" layoutX="10.0" layoutY="76.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #333333 #333333;" text="8" textFill="WHITE" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TEXT_ONLY" focusTraversable="false" layoutX="92.0" layoutY="76.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #333333 #333333;" text="9" textFill="WHITE" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TEXT_ONLY" focusTraversable="false" layoutX="174.0" layoutY="76.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #333333 #333333;" text="4" textFill="WHITE" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TEXT_ONLY" focusTraversable="false" layoutX="10.0" layoutY="142.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #333333 #333333;" text="5" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TEXT_ONLY" focusTraversable="false" layoutX="92.0" layoutY="142.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #333333 #333333;" text="6" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TEXT_ONLY" focusTraversable="false" layoutX="174.0" layoutY="142.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #333333 #333333;" text="1" textFill="WHITE" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TEXT_ONLY" focusTraversable="false" layoutX="10.0" layoutY="208.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #333333 #333333;" text="2" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TEXT_ONLY" focusTraversable="false" layoutX="92.0" layoutY="208.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #333333 #333333;" text="3" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TEXT_ONLY" focusTraversable="false" layoutX="174.0" layoutY="208.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #333333 #333333;" text="0" textFill="WHITE" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btn_bks" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="180.0" layoutY="274.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #FB5844#FB5844;" text="bk" textFill="#7aff85" GridPane.rowIndex="4">
+                     <graphic>
+                        <FontIcon fill="WHITE" iconLiteral="bi-arrow-left-square">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </FontIcon>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" contentDisplay="TEXT_ONLY" focusTraversable="false" layoutX="10.0" layoutY="274.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#eventNumPadAction" style="-fx-background-color: #19C636#19C636;" text="ENTER" textFill="WHITE" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </JFXButton>
+                    </children>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+                </GridPane>
+         </children>
+      </VBox>
+    </right>
+    <top>
+        <HBox alignment="CENTER_LEFT" prefWidth="200.0" style="-fx-background-color: #FFF;" BorderPane.alignment="CENTER">
+            <children>
+            <JFXHamburger fx:id="ico_hamb" onMouseClicked="#showSidebar" opacity="0.66" />
+                <ImageView fitHeight="50.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@img/LogoPos.png" />
+                    </image>
+                    <HBox.margin>
+                        <Insets bottom="3.0" left="10.0" top="3.0" />
+                    </HBox.margin>
+                </ImageView>
+                <VBox alignment="CENTER_LEFT" nodeOrientation="LEFT_TO_RIGHT" prefWidth="300.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefWidth="200.0">
+                            <children>
+                                <Label text="01" textFill="#2f2f2f">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font></Label>
+                                <Label text="POINT : " textFill="#2f2f2f">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font></Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefWidth="200.0">
+                            <children>
+                                <Label text="Dr. Wolf" textFill="#2f2f2f">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font></Label>
+                                <Label text="USER : " textFill="#2f2f2f">
+                                    <font>
+                                        <Font size="13.0" />
+                                    </font></Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <padding>
+                <Insets left="8.0" right="8.0" />
+            </padding>
+            <effect>
+                <DropShadow radius="4.75" width="0.0" />
+            </effect>
+        </HBox>
+    </top>
+   <left>
+      <VBox fx:id="vBox_sidebar" minWidth="0.0" prefHeight="706.0" prefWidth="0.0" scaleX="0.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="0.0" style="-fx-background-color: #19C636#19C636 #19C636#19C636;" text="CASH" textFill="WHITE">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="bx-money" iconSize="24">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontIcon>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="0.0" style="-fx-background-color: #19C636#19C636 #19C636#19C636;" text="CASH" textFill="WHITE">
+               <graphic>
+                  <FontIcon iconColor="#6f4040" iconLiteral="bx-money" iconSize="24">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontIcon>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="0.0" style="-fx-background-color: #19C636#19C636 #19C636#19C636;" text="CASH" textFill="WHITE">
+               <graphic>
+                  <FontIcon iconColor="#d36a6a" iconLiteral="bx-money" iconSize="24">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontIcon>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="0.0" style="-fx-background-color: #19C636#19C636 #19C636#19C636;" text="CASH" textFill="WHITE">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="bx-money" iconSize="24">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontIcon>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="0.0" style="-fx-background-color: #19C636#19C636 #19C636#19C636;" text="CASH" textFill="WHITE">
+               <graphic>
+                  <FontIcon iconColor="#6f3c3c" iconLiteral="bx-money" iconSize="24">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontIcon>
+               </graphic>
+            </JFXButton>
+            <JFXButton alignment="BASELINE_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="0.0" style="-fx-background-color: #19C636#19C636 #19C636#19C636;" text="CASH" textFill="WHITE">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="bx-money" iconSize="24">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </FontIcon>
+               </graphic>
+            </JFXButton>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+</BorderPane>

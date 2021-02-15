@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vBox_itemsTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="0.0" prefHeight="45.0" prefWidth="521.0" spacing="5.0" style="-fx-background-color: #F8F8F8;">
+         <children>
+            <Label minHeight="0.0" prefWidth="35.0" text="#No" textFill="#4d4d4d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label minHeight="0.0" prefWidth="85.0" text="CODE" textFill="#4d4d4d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label maxWidth="1.7976931348623157E308" minHeight="0.0" text="DESCRIPTION" textFill="#4d4d4d" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" minHeight="0.0" prefWidth="50.0" text="QTY" textFill="#4d4d4d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" minHeight="0.0" prefWidth="55.0" text="U.PRICE" textFill="#4d4d4d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" minHeight="0.0" prefWidth="60.0" text="DIS%" textFill="#4d4d4d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" minHeight="0.0" prefWidth="90.0" text="AMOUNT" textFill="#4d4d4d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" minHeight="0.0" prefWidth="60.0" text="ACTION" textFill="#4d4d4d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </HBox>
+      <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" minHeight="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #fff;" VBox.vgrow="ALWAYS">
+         <content>
+            <VBox fx:id="vBox_itemList" prefHeight="200.0" prefWidth="100.0" spacing="2.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>
