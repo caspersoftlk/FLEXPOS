@@ -11,8 +11,8 @@ import javafx.scene.control.Label;
 
 public class ItemController {
     private TempItem item;
-    Anc_ItemViewController contex;
-    public ItemController(TempItem i,Anc_ItemViewController context){
+    POSView contex;
+    public ItemController(TempItem i,POSView context){
         this.item = i;
         this.contex = context;
     }

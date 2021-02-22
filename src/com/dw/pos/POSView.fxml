@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXHamburger?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -12,6 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -24,7 +26,7 @@
         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFF;" BorderPane.alignment="CENTER">
          <children>
             <Separator layoutX="761.0" layoutY="8.0" orientation="VERTICAL" prefHeight="200.0" AnchorPane.bottomAnchor="8.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.0" />
-            <VBox fx:id="vBox_MainContainer" layoutX="267.0" layoutY="177.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="8.0">
+            <VBox layoutX="267.0" layoutY="177.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="8.0">
                <children>
                   <HBox prefWidth="200.0">
                      <children>
@@ -47,7 +49,233 @@
                         <Insets bottom="8.0" top="2.0" />
                      </VBox.margin>
                   </HBox>
-                  <AnchorPane fx:id="ancPane_Container" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <VBox fx:id="vBox_itemsTable" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="0.0" prefHeight="45.0" prefWidth="521.0" spacing="5.0" style="-fx-background-color: #F8F8F8;">
+                           <children>
+                              <Label minHeight="0.0" prefWidth="35.0" text="#No" textFill="#4d4d4d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label minHeight="0.0" prefWidth="85.0" text="CODE" textFill="#4d4d4d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label maxWidth="1.7976931348623157E308" minHeight="0.0" text="DESCRIPTION" textFill="#4d4d4d" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" minHeight="0.0" prefWidth="50.0" text="QTY" textFill="#4d4d4d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" minHeight="0.0" prefWidth="55.0" text="U.PRICE" textFill="#4d4d4d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" minHeight="0.0" prefWidth="60.0" text="DIS%" textFill="#4d4d4d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" minHeight="0.0" prefWidth="90.0" text="AMOUNT" textFill="#4d4d4d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" minHeight="0.0" prefWidth="60.0" text="ACTION" textFill="#4d4d4d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                        </HBox>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" minHeight="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #fff;" VBox.vgrow="ALWAYS">
+                           <content>
+                              <VBox fx:id="vBox_itemList" prefHeight="200.0" prefWidth="100.0" spacing="2.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+                  <GridPane fx:id="grid_cash" hgap="8.0" maxHeight="0.0" minHeight="0.0" scaleX="0.0" vgap="8.0" VBox.vgrow="ALWAYS">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="0.0" prefWidth="160.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="0.0" prefWidth="150.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="0.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="0.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="0.0" percentHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="0.0" percentHeight="0.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label minHeight="0.0" text="Total Payable" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_totalPayable" alignment="CENTER_RIGHT" editable="false" minHeight="0.0" promptText="0.00" text="18,898.00" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label minHeight="0.0" text="CUSTOMER AMOUNT" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_cusAmount" alignment="CENTER_RIGHT" focusTraversable="false" minHeight="0.0" promptText="0.00" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </TextField>
+                        <Label minHeight="0.0" text="BALANCE" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_cashBal" alignment="CENTER_RIGHT" editable="false" minHeight="0.0" promptText="0.00" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label minHeight="0.0" text="PAYMENT TYPE : CASH" textFill="#404040" GridPane.columnSpan="2" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                        <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" onAction="#eventCashPadAction" style="-fx-background-color: #217EB6#217EB6;" text="100" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
+                           <graphic>
+                              <FontIcon iconColor="WHITE" iconLiteral="bx-money" iconSize="30">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </FontIcon>
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" onAction="#eventCashPadAction" style="-fx-background-color: #217EB6#217EB6;" text="500" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
+                           <graphic>
+                              <FontIcon iconColor="WHITE" iconLiteral="bx-money" iconSize="30">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </FontIcon>
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" onAction="#eventCashPadAction" style="-fx-background-color: #217EB6#217EB6;" text="1000" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS">
+                           <graphic>
+                              <FontIcon iconColor="WHITE" iconLiteral="bx-money" iconSize="30">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </FontIcon>
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" onAction="#eventCashPadAction" style="-fx-background-color: #217EB6#217EB6;" text="5000" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS">
+                           <graphic>
+                              <FontIcon iconColor="WHITE" iconLiteral="bx-money" iconSize="30">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </FontIcon>
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_RIGHT" contentDisplay="GRAPHIC_ONLY" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" onAction="#getBackTovBoxItemTable" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.vgrow="ALWAYS">
+                           <graphic>
+                              <FontIcon iconColor="#404040" iconLiteral="bx-chevron-left-circle" iconSize="40" />
+                           </graphic>
+                        </JFXButton>
+                        <FlowPane fx:id="Flow_PaymCash" hgap="5.0" vgap="5.0" GridPane.rowIndex="4" GridPane.rowSpan="2" GridPane.vgrow="ALWAYS" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane fx:id="grid_card" hgap="8.0" layoutX="10.0" layoutY="47.0" maxHeight="0.0" minHeight="0.0" vgap="8.0" VBox.vgrow="ALWAYS">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="50.0" minHeight="0.0" percentHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="50.0" minHeight="0.0" percentHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="50.0" minHeight="0.0" percentHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="50.0" minHeight="0.0" percentHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label minHeight="0.0" text="Total Payable" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_totalPayable1" alignment="CENTER_RIGHT" editable="false" minHeight="0.0" promptText="0.00" text="18,898.00" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label minHeight="0.0" text="CARD AMOUNT" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_cusAmount1" alignment="CENTER_RIGHT" focusTraversable="false" minHeight="0.0" promptText="0.00" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label minHeight="0.0" text="BALANCE" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tf_cashBal1" alignment="CENTER_RIGHT" editable="false" minHeight="0.0" promptText="0.00" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </TextField>
+                        <Label minHeight="0.0" text="PAYMENT TYPE : CARD" textFill="#404040" GridPane.columnSpan="2" GridPane.vgrow="ALWAYS">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Label>
+                        <JFXButton alignment="BASELINE_RIGHT" contentDisplay="GRAPHIC_ONLY" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" onAction="#getBackTovBoxItemTable" GridPane.columnIndex="1" GridPane.vgrow="ALWAYS">
+                           <graphic>
+                              <FontIcon iconColor="#404040" iconLiteral="bx-chevron-left-circle" iconSize="40" />
+                           </graphic>
+                        </JFXButton>
+                        <HBox fx:id="hbox_fincard" minHeight="0.0" spacing="5.0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+                        <TextField fx:id="tf_cardno" maxHeight="1.7976931348623157E308" minHeight="0.0" onAction="#eventValidateCC" promptText="####-####-####-####" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="28.0" />
+                           </font></TextField>
+                        <HBox fx:id="hbox_card" disable="true" minHeight="0.0" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
                   <Separator prefWidth="200.0">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />

@@ -17,7 +17,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.*;
-import javafx.scene.layout.*;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 import javax.security.auth.callback.Callback;
@@ -34,9 +37,6 @@ public class POSView {
     private VBox vBox_sidebar,vBox_MainContainer;
     @FXML
     private JFXHamburger ico_hamb;
-
-    @FXML
-    private AnchorPane ancPane_Container;
 
     @FXML
     private HBox hbox_card,hbox_fincard;
@@ -74,29 +74,29 @@ public class POSView {
         clock.play();
 
         //TODO
-        hideOrShowVboxItemTable();
-        //initCard();
-//        hideOrShowVboxItemTable(true);
-//        hideOrShowGridCash(false);
-//        hideOrShowGridCard(false);
+        initTalbe();
+        initCard();
+        hideOrShowVboxItemTable(true);
+        hideOrShowGridCash(false);
+        hideOrShowGridCard(false);
 
-//        tf_cusAmount.textProperty().addListener((observable, oldValue, newValue) -> {
-//            tf_cashBal.setText(Common.formatNumber(getCusBalance(newValue)));
-//        });
+        tf_cusAmount.textProperty().addListener((observable, oldValue, newValue) -> {
+            tf_cashBal.setText(Common.formatNumber(getCusBalance(newValue)));
+        });
 
 
         //Card Number Mask
-//        tf_cardno.textProperty().addListener((observable, oldValue, newValue) -> {
-//            System.out.println(newValue.length());
-//            if(newValue.length()==4||newValue.length()==9||newValue.length()==14){
-//                tf_cardno.setText(newValue.concat("-"));
-//            }
-//            if (tf_cardno.getText().length() > 19) {
-//                String s = tf_cardno.getText().substring(0, 19);
-//                tf_cardno.setText(s);
-//            }
-//            hbox_card.setDisable(!CheckCC(tf_cardno.getText().replace("-","")));
-//        });
+        tf_cardno.textProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println(newValue.length());
+            if(newValue.length()==4||newValue.length()==9||newValue.length()==14){
+                tf_cardno.setText(newValue.concat("-"));
+            }
+            if (tf_cardno.getText().length() > 19) {
+                String s = tf_cardno.getText().substring(0, 19);
+                tf_cardno.setText(s);
+            }
+            hbox_card.setDisable(!CheckCC(tf_cardno.getText().replace("-","")));
+        });
 
         //Numpad Backspace button
         btn_bks.addEventFilter(MouseEvent.ANY, new EventHandler<>() {
@@ -210,27 +210,26 @@ public class POSView {
 
     /* Show And Hide Containers */
     private String focusStage = "I";
-    private void hideOrShowVboxItemTable(){
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Anc_ItemView.fxml"));
-            Anc_ItemViewController controller = new Anc_ItemViewController();
-            fxmlLoader.setController(controller);
-
-            ancPane_Container.getChildren().add(fxmlLoader.load());
-        } catch (IOException e) {
-            e.printStackTrace();
+    private void hideOrShowVboxItemTable(boolean show){
+        if(show){
+            vBox_itemsTable.setMaxHeight(-1);
+            vBox_itemsTable.setScaleX(1);
+            tf_barcode.requestFocus();
+        }else{
+            vBox_itemsTable.setMaxHeight(0);
+            vBox_itemsTable.setScaleX(0);
         }
     }
-//    private void hideOrShowGridCash(boolean show){
-//        if(show){
-//            grid_cash.setMaxHeight(-1);
-//            grid_cash.setScaleX(1);
-//            tf_cusAmount.requestFocus();
-//        }else{
-//            grid_cash.setMaxHeight(0);
-//            grid_cash.setScaleX(0);
-//        }
-//    }
+    private void hideOrShowGridCash(boolean show){
+        if(show){
+            grid_cash.setMaxHeight(-1);
+            grid_cash.setScaleX(1);
+            tf_cusAmount.requestFocus();
+        }else{
+            grid_cash.setMaxHeight(0);
+            grid_cash.setScaleX(0);
+        }
+    }
     private void hideOrShowGridCard(boolean show){
         if(show){
             grid_card.setMaxHeight(-1);
@@ -244,26 +243,26 @@ public class POSView {
 
     @FXML
     void showGridChash(ActionEvent event) {
-//        hideOrShowVboxItemTable(false);
-//        hideOrShowGridCash(true);
-//        hideOrShowGridCard(false);
-//        Flow_PaymCash.getChildren().addAll(hbox_fincard.getChildren());
-//        focusStage ="CS";
+        hideOrShowVboxItemTable(false);
+        hideOrShowGridCash(true);
+        hideOrShowGridCard(false);
+        Flow_PaymCash.getChildren().addAll(hbox_fincard.getChildren());
+        focusStage ="CS";
     }
     @FXML
     void showGridCard(ActionEvent event) {
-//        hideOrShowVboxItemTable(false);
-//        hideOrShowGridCash(false);
-//        hideOrShowGridCard(true);
-//        hbox_fincard.getChildren().addAll(Flow_PaymCash.getChildren());
-//        focusStage = "CC";
+        hideOrShowVboxItemTable(false);
+        hideOrShowGridCash(false);
+        hideOrShowGridCard(true);
+        hbox_fincard.getChildren().addAll(Flow_PaymCash.getChildren());
+        focusStage = "CC";
     }
     @FXML
     void getBackTovBoxItemTable(ActionEvent event) {
-//        hideOrShowVboxItemTable(true);
-//        hideOrShowGridCash(false);
-//        hideOrShowGridCard(false);
-//        focusStage = "I";
+        hideOrShowVboxItemTable(true);
+        hideOrShowGridCash(false);
+        hideOrShowGridCard(false);
+        focusStage = "I";
     }
     /* End >> Show And Hide Containers */
 
@@ -408,4 +407,39 @@ public class POSView {
         return (sum % 10 == 0);
     }
     /* End >> Payment Card */
+
+
+    @FXML
+    private VBox vBox_itemsTable,vBox_itemList;
+
+    private void initTalbe(){
+        try {
+            Node[] nodes = new Node[10];
+
+            for(int i = 0; i<nodes.length;i++){
+
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("item.fxml"));
+                TempItem item = new TempItem(i);
+                ItemController controller = new ItemController(item,this);
+                fxmlLoader.setController(controller);
+
+                item.setNode(fxmlLoader.load());
+                controller.setItem(item);
+                itemList_views.add(controller);
+                vBox_itemList.getChildren().add(itemList_views.get(i).getItem().getNode());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void removeItemFromTable(int index){
+        itemList_views.remove(index);
+        vBox_itemList.getChildren().clear();
+        int i =0;
+        for (ItemController e:itemList_views) {
+            e.getItem().setSqNo(i++);
+            e.changeSqNo();
+            vBox_itemList.getChildren().add(e.getItem().getNode());
+        }
+    }
 }
